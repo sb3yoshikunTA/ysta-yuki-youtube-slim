@@ -49,7 +49,7 @@
                 <div class="pure-u-1 pure-u-md-1-4">
                     <div class="h-box">
                         {% if result["type"] == "video" %}
-                        <a style="width:100%" href="/watch?v={{ result['id'] }}">
+                        <a style="width:100%" href="/watch?v={{ result['id'] }}" target="_self">
                             <div class="thumbnail">
                                 <img loading="lazy" class="thumbnail" src="{% if proxy == "True" %}/thumbnail?v={{ result['id'] }}{% else %}https://img.youtube.com/vi/{{ result['id'] }}/0.jpg{% endif %}" onerror="document.cookie = 'proxy=True;max-age=2592000;';">
                                 <p class="length">{{result["length"]}}</p>
@@ -57,7 +57,7 @@
                             <p dir="auto">{{ result['title'] }}</p>
                         </a>
                         <div class="video-card-row flexible">
-                            <a href="/channel/{{result['authorId']}}">{{result["author"]}}</a>
+                            <a href="/channel/{{result['authorId']}}" target="_self">{{result["author"]}}</a>
                         </div>
                         <div class="video-card-row flexible">
                             <div class="flex-left">
@@ -67,7 +67,7 @@
                         {% elif result["type"] == "channel" %}
         
         
-                            <a href="/channel/{{result["id"]}}">
+                            <a href="/channel/{{result["id"]}}" target="_self">
                                 
                                     <center>
                                         <img loading="lazy" tabindex="-1" style="width:56.25%" src="{{result["thumbnail"]}}">
@@ -76,7 +76,7 @@
                                 <p dir="auto">{{result["author"]}}</p>
                             </a>
                         {% elif result["type"] == "playlist" %}
-                        <a style="width:100%" href="/playlist?list={{result["id"]}}">
+                        <a style="width:100%" href="/playlist?list={{result["id"]}}" target="_self">
                 
                             <div class="thumbnail">
                                 <img loading="lazy" tabindex="-1" class="thumbnail" src="{% if proxy == "True" %}/thumbnail?v={{ result['thumbnail'] }}{% else %}https://img.youtube.com/vi/{{ result['thumbnail'] }}/0.jpg{% endif %}">
