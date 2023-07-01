@@ -33,7 +33,7 @@
             <div id="player-container" class="h-box">
                 <video style="outline:none;background-color:#000;" playsinline="" poster="{% if proxy == "True" %}/thumbnail?v={{ videoid }}{% else %}https://img.youtube.com/vi/{{ videoid }}/0.jpg{% endif
                     %}" id="player" class="on-video_player video-js player-style-invidious" controls=""
-                    loadedmetadata="settime()" loop="" width="960px" height="720px">
+                    loadedmetadata="settime()" loop="" width="960" height="720">
                     {% for videourl in videourls%}
                     <source src="{{videourl}}">
                     {% endfor %}
