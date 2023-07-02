@@ -288,6 +288,11 @@ def home():
     global url
     url = requests.get(r'https://raw.githubusercontent.com/mochidukiyukimi/yuki-youtube-instance/main/instance.txt').text.rstrip()
 
+@app.get("/bbswiki")
+def home():
+    if not(check_cokie(yuki)):
+        return redirect("/")
+    return bbswiki("index.html",{"request":request})
 
 @app.exception_handler(500)
 def page(request: Request,__):
